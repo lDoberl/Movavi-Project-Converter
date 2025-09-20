@@ -5,52 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movavi Project Converter</title>
 
-    <!-- Мета-тег для Яндекс.Вебмастер -->
+    <!-- Подтверждение для Яндекс.Вебмастер -->
     <meta name="yandex-verification" content="408b488f27ff6804" />
+    <!-- Подтверждение для Google Search Console -->
+    <meta name="google-site-verification" content="abcdef1234567890" />
 
+    <!-- Основные стили -->
     <style>
+        /* Общие стили */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+            color: #333;
         }
         header {
             background-color: #4a90e2;
             color: white;
-            width: 100%;
-            padding: 20px 0;
             text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
         main {
-            max-width: 800px;
-            padding: 40px 20px;
-            text-align: center;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        section {
+            background: white;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        section h2 {
+            color: #4a90e2;
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
         }
         a.button {
             display: inline-block;
             margin-top: 20px;
-            padding: 12px 25px;
+            padding: 14px 28px;
             background-color: #4a90e2;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
         }
         a.button:hover {
             background-color: #357ab8;
         }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            a.button {
+                padding: 12px 20px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Шапка сайта -->
     <header>
         <h1>Movavi Project Converter</h1>
+        <p>Конвертер проектов Movavi для удобной работы и совместимости</p>
     </header>
+
+    <!-- Основной контент -->
     <main>
-        <p>Конвертер проектов Movavi. Здесь вы можете найти инструкции, скачать утилиту и получить подробное описание работы с проектами.</p>
-        <a href="https://github.com/ldoberl/Movavi-Project-Converter" class="button" target="_blank">Перейти на GitHub</a>
+        <section>
+            <h2>Описание проекта</h2>
+            <p>
+                Movavi Project Converter — это инструмент для конвертации проектов Movavi между различными версиями.
+                Вы сможете быстро открыть старые проекты или подготовить их для новых версий программы.
+            </p>
+        </section>
+
+        <section>
+            <h2>Как использовать</h2>
+            <p>1. Скачайте и распакуйте конвертер.</p>
+            <p>2. Выберите проект Movavi, который хотите конвертировать.</p>
+            <p>3. Следуйте инструкциям на экране, чтобы сохранить совместимый проект.</p>
+        </section>
+
+        <section>
+            <h2>Скачать / Перейти на GitHub</h2>
+            <a href="https://github.com/ldoberl/Movavi-Project-Converter" class="button" target="_blank">Открыть репозиторий</a>
+        </section>
     </main>
+
+    <!-- Подвал -->
+    <footer>
+        &copy; 2025 Movavi Project Converter. Все права защищены.
+    </footer>
+
 </body>
 </html>
