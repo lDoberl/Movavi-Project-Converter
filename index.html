@@ -17,45 +17,134 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #111827; /* bg-gray-900 */
-    color: #f3f4f6;           /* text-gray-100 */
+    background-color: #111827; 
+    color: #f3f4f6;           
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 header {
-    background-color: #1f2937; /* bg-gray-800 */
-    padding: 50px 20px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    padding: 50px 20px 70px;
     text-align: center;
-    border-bottom: 4px solid #22c55e; /* зеленая полоска */
-    border-radius: 0 0 20px 20px;
+    border-bottom: 6px solid #1f2937;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+header h1, header p {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+header h1.visible, header p.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 header h1 {
-    font-size: 2.5em;
-    color: #4ade80; /* text-green-400 */
+    font-size: 2.8em;
     margin: 0;
+    color: #111827;
+}
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #1f2937;
+}
+
+#lang-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #1f2937;
+    color: #f3f4f6;
+    border: 2px solid #22c55e;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    overflow: hidden;
+}
+#lang-btn:hover {
+    background: #22c55e;
+    color: #111827;
+}
+#lang-btn.spin {
+    animation: spin 0.6s ease forwards;
+}
+#lang-btn.glow {
+    box-shadow: 0 0 10px #22c55e;
+    animation: glow 1s ease;
+}
+@keyframes spin {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes glow {
+    0% { box-shadow: 0 0 0px #22c55e; }
+    50% { box-shadow: 0 0 20px #22c55e; }
+    100% { box-shadow: 0 0 0px #22c55e; }
 }
 
 main {
-    max-width: 900px;
-    margin: 40px auto;
+    max-width: 1100px;
+    margin: 50px auto;
     padding: 0 20px;
 }
 
 section {
     background: #1f2937;
-    padding: 30px 20px;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; 
+    transform: translateY(40px);
+}
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.8);
 }
 
 section h2 {
     color: #22c55e;
     margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8em;
 }
 
-p {
-    line-height: 1.6;
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.feature-card {
+    background: #111827;
+    border: 2px solid #22c55e;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s, background 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+.feature-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.feature-card:hover {
+    transform: scale(1.05);
+    background: #16a34a22;
 }
 
 a.button {
@@ -71,44 +160,180 @@ a.button {
 }
 a.button:hover {
     background-color: #16a34a;
+    transform: scale(1.05);
 }
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 25px;
+    margin-top: 40px;
     color: #9ca3af;
+    font-size: 0.9em;
+    border-top: 1px solid #374151;
 }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Movavi Project Converter</h1>
+    <h1 id="title">Movavi Project Converter</h1>
+    <p id="subtitle">Лёгкий способ открыть проекты Movavi в разных версиях 🎬</p>
+    <button id="lang-btn">EN</button>
 </header>
 
 <main>
 <section>
-    <h2>Описание проекта</h2>
-    <p>Movavi Project Converter — это инструмент для конвертации проектов Movavi между различными версиями.
-    Быстро открывайте старые проекты или подготавливайте их для новых версий программы.</p>
+    <h2 id="about-title">О проекте</h2>
+    <p id="about-text">
+        <b>Movavi Project Converter</b> — это инструмент для конвертации проектов <b>.mepj</b> 
+        между различными версиями Movavi Video Editor. 
+        Программа позволяет открывать старые проекты в новых версиях редактора и наоборот.
+    </p>
 </section>
 
 <section>
-    <h2>Как использовать</h2>
-    <p>1. Скачайте и распакуйте конвертер.</p>
-    <p>2. Выберите проект Movavi (.mepj).</p>
-    <p>3. Выберите целевую версию и нажмите <b>Convert</b>.</p>
+    <h2 id="features-title">Возможности</h2>
+    <div class="features">
+        <div class="feature-card" id="f1">✔ Конвертация проектов между версиями Movavi</div>
+        <div class="feature-card" id="f2">✔ Поддержка формата <b>.mepj</b></div>
+        <div class="feature-card" id="f3">✔ Выбор целевой версии (23.3.0, 25.3.0, 25.9.0)</div>
+        <div class="feature-card" id="f4">✔ Drag & Drop загрузка файлов</div>
+        <div class="feature-card" id="f5">✔ Интерактивное окно с инструкциями</div>
+        <div class="feature-card" id="f6">✔ Поддержка двух языков (EN / RU)</div>
+    </div>
 </section>
 
 <section>
-    <h2>Перейти на GitHub</h2>
-    <a href="https://github.com/ldoberl/Movavi-Project-Converter" class="button" target="_blank">Открыть репозиторий</a>
+    <h2 id="how-title">Как использовать</h2>
+    <p id="how1">1. Скачайте готовый <b>exe-файл</b> из раздела релизов.</p>
+    <p id="how2">2. Запустите конвертер и выберите ваш <b>.mepj</b> файл.</p>
+    <p id="how3">3. Укажите целевую версию Movavi.</p>
+    <p id="how4">4. Нажмите <b>Convert</b> и получите готовый проект!</p>
+    <a href="https://github.com/ldoberl/Movavi-Project-Converter/releases" class="button" target="_blank" id="download-btn">⬇ Скачать</a>
+</section>
+
+<section>
+    <h2 id="github-title">GitHub репозиторий</h2>
+    <p id="github-text">Исходный код проекта открыт и доступен всем. Вы можете изучить его, предложить улучшения или создать свой форк.</p>
+    <a href="https://github.com/ldoberl/Movavi-Project-Converter" class="button" target="_blank" id="github-btn">🌍 Перейти на GitHub</a>
 </section>
 </main>
 
-<footer>
+<footer id="footer">
 &copy; 2025 Movavi Project Converter. Все права защищены.
 </footer>
+
+<script>
+/* === Переключение языков === */
+let lang = "ru";
+const texts = {
+  ru: {
+    title: "Movavi Project Converter",
+    subtitle: "Лёгкий способ открыть проекты Movavi в разных версиях 🎬",
+    aboutTitle: "О проекте",
+    aboutText: "<b>Movavi Project Converter</b> — это инструмент для конвертации проектов <b>.mepj</b> между различными версиями Movavi Video Editor. Программа позволяет открывать старые проекты в новых версиях редактора и наоборот.",
+    featuresTitle: "Возможности",
+    f1: "✔ Конвертация проектов между версиями Movavi",
+    f2: "✔ Поддержка формата <b>.mepj</b>",
+    f3: "✔ Выбор целевой версии (23.3.0, 25.3.0, 25.9.0)",
+    f4: "✔ Drag & Drop загрузка файлов",
+    f5: "✔ Интерактивное окно с инструкциями",
+    f6: "✔ Поддержка двух языков (EN / RU)",
+    howTitle: "Как использовать",
+    how1: "1. Скачайте готовый <b>exe-файл</b> из раздела релизов.",
+    how2: "2. Запустите конвертер и выберите ваш <b>.mepj</b> файл.",
+    how3: "3. Укажите целевую версию Movavi.",
+    how4: "4. Нажмите <b>Convert</b> и получите готовый проект!",
+    downloadBtn: "⬇ Скачать",
+    githubTitle: "GitHub репозиторий",
+    githubText: "Исходный код проекта открыт и доступен всем. Вы можете изучить его, предложить улучшения или создать свой форк.",
+    githubBtn: "🌍 Перейти на GitHub",
+    footer: "© 2025 Movavi Project Converter. Все права защищены.",
+    langBtn: "EN"
+  },
+  en: {
+    title: "Movavi Project Converter",
+    subtitle: "An easy way to open Movavi projects across different versions 🎬",
+    aboutTitle: "About the Project",
+    aboutText: "<b>Movavi Project Converter</b> is a tool for converting <b>.mepj</b> projects between different versions of Movavi Video Editor. It allows you to open old projects in new versions and vice versa.",
+    featuresTitle: "Features",
+    f1: "✔ Convert projects between Movavi versions",
+    f2: "✔ Support for <b>.mepj</b> format",
+    f3: "✔ Choose target version (23.3.0, 25.3.0, 25.9.0)",
+    f4: "✔ Drag & Drop file upload",
+    f5: "✔ Interactive instruction window",
+    f6: "✔ Multi-language support (EN / RU)",
+    howTitle: "How to Use",
+    how1: "1. Download the ready-to-use <b>exe file</b> from releases.",
+    how2: "2. Run the converter and select your <b>.mepj</b> file.",
+    how3: "3. Choose the target Movavi version.",
+    how4: "4. Click <b>Convert</b> to get your converted project!",
+    downloadBtn: "⬇ Download",
+    githubTitle: "GitHub Repository",
+    githubText: "The project is open-source and available to everyone. You can explore it, suggest improvements, or create your own fork.",
+    githubBtn: "🌍 Go to GitHub",
+    footer: "© 2025 Movavi Project Converter. All rights reserved.",
+    langBtn: "RU"
+  }
+};
+
+document.getElementById("lang-btn").addEventListener("click", () => {
+  const btn = document.getElementById("lang-btn");
+  btn.classList.add("spin", "glow");
+
+  lang = lang === "ru" ? "en" : "ru";
+  const t = texts[lang];
+  document.getElementById("title").innerHTML = t.title;
+  document.getElementById("subtitle").innerHTML = t.subtitle;
+  document.getElementById("about-title").innerHTML = t.aboutTitle;
+  document.getElementById("about-text").innerHTML = t.aboutText;
+  document.getElementById("features-title").innerHTML = t.featuresTitle;
+  document.getElementById("f1").innerHTML = t.f1;
+  document.getElementById("f2").innerHTML = t.f2;
+  document.getElementById("f3").innerHTML = t.f3;
+  document.getElementById("f4").innerHTML = t.f4;
+  document.getElementById("f5").innerHTML = t.f5;
+  document.getElementById("f6").innerHTML = t.f6;
+  document.getElementById("how-title").innerHTML = t.howTitle;
+  document.getElementById("how1").innerHTML = t.how1;
+  document.getElementById("how2").innerHTML = t.how2;
+  document.getElementById("how3").innerHTML = t.how3;
+  document.getElementById("how4").innerHTML = t.how4;
+  document.getElementById("download-btn").innerHTML = t.downloadBtn;
+  document.getElementById("github-title").innerHTML = t.githubTitle;
+  document.getElementById("github-text").innerHTML = t.githubText;
+  document.getElementById("github-btn").innerHTML = t.githubBtn;
+  document.getElementById("footer").innerHTML = t.footer;
+  document.getElementById("lang-btn").innerHTML = t.langBtn;
+
+  setTimeout(() => {
+    btn.classList.remove("spin", "glow");
+  }, 800);
+});
+
+/* === Анимации при скролле === */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll("section, .feature-card").forEach(el => {
+  observer.observe(el);
+});
+
+/* === Плавное появление заголовка при загрузке === */
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.querySelector("header h1").classList.add("visible");
+  }, 200);
+  setTimeout(() => {
+    document.querySelector("header p").classList.add("visible");
+  }, 600);
+});
+</script>
 
 </body>
 </html>
