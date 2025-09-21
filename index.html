@@ -8,9 +8,7 @@
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 
-<!-- Подтверждение для Яндекс -->
 <meta name="yandex-verification" content="408b488f27ff6804">
-<!-- Подтверждение для Google -->
 <meta name="google-site-verification" content="abcdef1234567890">
 
 <style>
@@ -55,6 +53,7 @@ header p {
     color: #1f2937;
 }
 
+/* Кнопка смены языка */
 #lang-btn {
     position: absolute;
     top: 15px;
@@ -73,13 +72,36 @@ header p {
     background: #22c55e;
     color: #111827;
 }
-#lang-btn.spin {
-    animation: spin 0.6s ease forwards;
+#lang-btn.spin { animation: spin 0.6s ease forwards; }
+#lang-btn.glow { box-shadow: 0 0 10px #22c55e; animation: glow 1s ease; }
+
+/* Кнопка Домой */
+#back-btn {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: #1f2937;
+    color: #f3f4f6;
+    border: 2px solid #22c55e;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s, transform 0.2s;
 }
-#lang-btn.glow {
-    box-shadow: 0 0 10px #22c55e;
-    animation: glow 1s ease;
+#back-btn::before {
+    content: "🏠";
 }
+#back-btn:hover {
+    background: #22c55e;
+    color: #111827;
+    transform: scale(1.05);
+}
+
 @keyframes spin {
     0% { transform: rotate(0); }
     100% { transform: rotate(360deg); }
@@ -176,6 +198,7 @@ footer {
 <body>
 
 <header>
+    <a href="https://ldoberl.github.io/" id="back-btn">Домой</a>
     <h1 id="title">Movavi Project Converter</h1>
     <p id="subtitle">Лёгкий способ открыть проекты Movavi в разных версиях 🎬</p>
     <button id="lang-btn">EN</button>
@@ -224,7 +247,6 @@ footer {
 </footer>
 
 <script>
-/* === Переключение языков === */
 let lang = "ru";
 const texts = {
   ru: {
@@ -249,7 +271,8 @@ const texts = {
     githubText: "Исходный код проекта открыт и доступен всем. Вы можете изучить его, предложить улучшения или создать свой форк.",
     githubBtn: "🌍 Перейти на GitHub",
     footer: "© 2025 Movavi Project Converter. Все права защищены.",
-    langBtn: "EN"
+    langBtn: "EN",
+    backBtn: "Домой"
   },
   en: {
     title: "Movavi Project Converter",
@@ -273,7 +296,8 @@ const texts = {
     githubText: "The project is open-source and available to everyone. You can explore it, suggest improvements, or create your own fork.",
     githubBtn: "🌍 Go to GitHub",
     footer: "© 2025 Movavi Project Converter. All rights reserved.",
-    langBtn: "RU"
+    langBtn: "RU",
+    backBtn: "Home"
   }
 };
 
@@ -305,6 +329,7 @@ document.getElementById("lang-btn").addEventListener("click", () => {
   document.getElementById("github-btn").innerHTML = t.githubBtn;
   document.getElementById("footer").innerHTML = t.footer;
   document.getElementById("lang-btn").innerHTML = t.langBtn;
+  document.getElementById("back-btn").innerHTML = t.backBtn;
 
   setTimeout(() => {
     btn.classList.remove("spin", "glow");
