@@ -1,125 +1,133 @@
-# Movavi Project Converter 🎬✨
+# 🐾 Movavi Project Converter
 
-**Конвертер проектов Movavi `.mepj` между версиями с удобным веб-интерфейсом.**
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/ldoberl/Movavi-Project-Converter?color=blue)
+![GitHub issues](https://img.shields.io/github/issues/ldoberl/Movavi-Project-Converter)
+![GitHub license](https://img.shields.io/github/license/ldoberl/Movavi-Project-Converter)
 
----
+## RU
 
-## 🇷🇺 Русский
-
-### Быстрый старт
-
-Вы можете сразу запустить приложение на Windows через готовый `.exe` файл из [раздела Releases](https://github.com/lDoberl/Movavi-Project-Converter/releases). Python устанавливать не нужно — просто двойной клик, и приложение откроется в браузере.
-
-### Описание
-
-Movavi Project Converter позволяет конвертировать файлы `.mepj` между версиями **23.3.0**, **25.3.0** и **25.9.0**. Приложение имеет удобный веб-интерфейс с поддержкой **Drag & Drop** и двух языков: **English** и **Русский**.
-
-### Основные возможности
-
-* 🗂 **Поддержка форматов:** конвертируй `.mepj` файлы между версиями 23.3.0, 25.3.0 и 25.9.0
-* 🌐 **Web-интерфейс:** красивый браузерный интерфейс с TailwindCSS
-* 🎨 **Drag & Drop:** перетаскивай файлы на страницу — дроп-зона растягивается на весь экран
-* 🔄 **Автоматическое обновление `config.json`:** все настройки версии обновляются автоматически
-* 🌍 **Многоязычность:** интерфейс поддерживает English и Русский
-* ✅ **Уведомления:** информативные всплывающие сообщения о успешной конверсии
-* ❌ **Безопасный выход:** кнопка Exit мгновенно закрывает приложение
-
-### Системные требования
-
-* Windows / Linux / MacOS
-* Python 3.10+ (только для исходников, не требуется для `.exe`)
-* Браузер для запуска веб-интерфейса
-
-### Установка и запуск (из исходников)
-
-1. Склонируйте репозиторий:
-
-```bash
-git clone https://github.com/lDoberl/Movavi-Project-Converter.git
-cd Movavi-Project-Converter
-```
-
-2. Создайте виртуальное окружение и активируйте его:
-
-```bash
-python -m venv env
-# Windows
-env\Scripts\activate
-# Linux / macOS
-source env/bin/activate
-```
-
-3. Установите зависимости:
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Запустите приложение:
-
-```bash
-python app.py
-```
-
-5. В браузере откроется интерфейс на `http://127.0.0.1:5000`. Перетащите `.mepj` файл, выберите версию и нажмите **Convert**.
+**Movavi Project Converter** — это инструмент для конвертации проектов <b>.mepj</b> между различными версиями Movavi Video Editor. Программа позволяет открывать старые проекты в новых версиях редактора и наоборот.
 
 ---
 
-## 🇬🇧 English
+## ✨ Особенности
 
-### Quick Start
+* 🔄 **Конвертация проектов:** между различными версиями Movavi.
+* 📂 **Поддержка формата <b>.mepj</b>**
+* 🎯 **Выбор целевой версии:** 23.3.0, 25.3.0, 25.9.0.
+* 🖱️ **Drag & Drop:** простая загрузка файлов.
+* 📝 **Интерактивное окно:** с пошаговыми инструкциями.
+* 🌐 **Двухъязычная поддержка:** EN / RU.
 
-You can immediately run the application on Windows using the ready-to-use `.exe` file from the [Releases](https://github.com/lDoberl/Movavi-Project-Converter/releases) section. Python is not required — just double-click the file, and the application will open in your browser.
+---
 
-### Description
+## 🚀 Установка
 
-Movavi Project Converter allows you to convert `.mepj` files between versions **23.3.0**, **25.3.0**, and **25.9.0**. The app features a user-friendly web interface with **Drag & Drop** support and multilingual interface: **English** and **Russian**.
+### 1️⃣ Использование готового релиза (рекомендуется)
 
-### Features
+1. Перейдите в [раздел Releases](https://github.com/ldoberl/Movavi-Project-Converter/releases).
+2. Скачайте последнюю версию `MovaviProjectConverter.exe`.
+3. Запустите файл и следуйте инструкциям.
 
-* 🗂 **Format Support:** convert `.mepj` files between 23.3.0, 25.3.0, and 25.9.0
-* 🌐 **Web Interface:** beautiful browser interface built with TailwindCSS
-* 🎨 **Drag & Drop:** drag files directly onto the page — the drop zone expands to fullscreen
-* 🔄 **Automatic `config.json` Update:** all version settings are updated automatically
-* 🌍 **Multilingual Support:** interface available in English and Russian
-* ✅ **Notifications:** informative pop-up messages on successful conversion
-* ❌ **Safe Exit:** Exit button instantly closes the application
-
-### System Requirements
-
-* Windows / Linux / MacOS
-* Python 3.10+ (only for source code, not required for `.exe`)
-* Browser for web interface
-
-### Installation and Usage (from source)
-
-1. Clone the repository:
+### 2️⃣ Сборка из исходников
 
 ```bash
-git clone https://github.com/lDoberl/Movavi-Project-Converter.git
+git clone https://github.com/ldoberl/Movavi-Project-Converter.git
 cd Movavi-Project-Converter
+# Следуйте инструкциям по сборке для вашей платформы
 ```
 
-2. Create and activate a virtual environment:
+---
+
+## 🐾 Как пользоваться
+
+1. Запустите Movavi Project Converter.
+2. Выберите ваш <b>.mepj</b> файл.
+3. Укажите целевую версию Movavi.
+4. Нажмите <b>Convert</b> и получите готовый проект!
+
+---
+
+## 💡 Советы
+
+* Используйте последнюю версию программы для корректной работы.
+* Для больших проектов используйте ПК с достаточным объемом оперативной памяти.
+
+---
+
+## 📄 Лицензия
+
+Проект распространяется под лицензией MIT. Подробности в файле [LICENSE](LICENSE).
+
+---
+
+## 🌟 Поддержка
+
+Если у вас есть вопросы или предложения — открывайте [Issues](https://github.com/ldoberl/Movavi-Project-Converter/issues) или присылайте Pull Request.
+
+---
+
+## EN
+
+**Movavi Project Converter** is a tool for converting <b>.mepj</b> projects between different versions of Movavi Video Editor. It allows you to open old projects in new versions and vice versa.
+
+---
+
+## ✨ Features
+
+* 🔄 **Project Conversion:** between different Movavi versions.
+* 📂 **Supports <b>.mepj</b> format**
+* 🎯 **Target version selection:** 23.3.0, 25.3.0, 25.9.0.
+* 🖱️ **Drag & Drop:** easy file upload.
+* 📝 **Interactive instruction window:** step-by-step guidance.
+* 🌐 **Multi-language support:** EN / RU.
+
+---
+
+## 🚀 Installation
+
+### 1️⃣ Using the release (recommended)
+
+1. Go to the [Releases page](https://github.com/ldoberl/Movavi-Project-Converter/releases).
+2. Download the latest `MovaviProjectConverter.exe`.
+3. Run the file and follow the instructions.
+
+### 2️⃣ Building from source
 
 ```bash
-python -m venv env
-# Windows
-env\Scripts\activate
-# Linux / macOS
-source env/bin/activate
+git clone https://github.com/ldoberl/Movavi-Project-Converter.git
+cd Movavi-Project-Converter
+# Follow the build instructions for your platform
 ```
 
-3. Install dependencies:
+---
 
-```bash
-pip install -r requirements.txt
-```
+## 🐾 How to use
 
-4. Run the application:
+1. Launch Movavi Project Converter.
+2. Select your <b>.mepj</b> file.
+3. Choose the target Movavi version.
+4. Click <b>Convert</b> to get the converted project!
 
-```bash
-python app.py
-```
+---
 
-5. Web browser will open at `http://127.0.0.1:5000`. Drag and drop your `.mepj` file, select the target version, and click **Convert**.
+## 💡 Tips
+
+* Use the latest version for correct operation.
+* For large projects, use a PC with sufficient RAM.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. Details in [LICENSE](LICENSE).
+
+---
+
+## 🌟 Support
+
+If you have questions or suggestions, open an [Issue](https://github.com/ldoberl/Movavi-Project-Converter/issues) or submit a Pull Request.
+
+---
+
+> Сделано с ❤️ lDoberl / Made with ❤️ by the lDoberl
